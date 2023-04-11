@@ -2,6 +2,6 @@ Db migration'ı program çalışırken otomatik yapmak. Ders 14:4:50
 
 dotnet watch tekrar incelenebilir. Ders 14 ün sonları
 ----------------------
-17 dan devam edilecek
+29 dan devam edilecek
 
 

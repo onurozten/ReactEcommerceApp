@@ -1,0 +1,15 @@
+// export enum Claims {
+//     None   = 0,
+//     First  = 1 << 0,
+//     Second = 1 << 1,
+//     Third  = 1 << 2,
+//     Fourth = 1 << 3,
+//     All = ~None // -1
+// }
+
+// const flags = Claims.First | Claims.Second;
+
+// if (flags & (Claims.Third | Claims.Fourth | Claims.Second)) {
+//   console.log("exist");
+// }
+

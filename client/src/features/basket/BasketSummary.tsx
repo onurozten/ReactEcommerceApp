@@ -7,18 +7,20 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { useStoreContext } from "../../app/context/StoreContext";
+import { useAppSelector } from "../../app/router/configureStore";
 
 export default function BasketSummary() {
-  const { basket } = useStoreContext();
+  const { basket } = useAppSelector((state) => state.basket);
 
-  if (!basket)
-    return <Typography variant="h3">Your basket is empty</Typography>;
+  // if (!basket)
+  //   return <Typography variant="h3">Your basket is empty</Typography>;
 
-  const subTotal = basket?.items.reduce(
-    (sum, item) => sum + (item.price / 100) * item.quantity,
-    0
-  );
+  const subTotal = basket?.items
+    ? basket?.items.reduce(
+        (sum, item) => sum + (item.price / 100) * item.quantity,
+        0
+      )
+    : 0;
 
   const deliveryFeeTopLimit = 100;
   const deliveryFeeAmount = 5;
@@ -39,7 +41,7 @@ export default function BasketSummary() {
           </TableRow>
           <TableRow>
             <TableCell>Total</TableCell>
-            <TableCell align="right">${subTotal+deliveryFee}</TableCell>
+            <TableCell align="right">${subTotal + deliveryFee}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell colSpan={2}>

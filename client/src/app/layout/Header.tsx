@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
-import { useStoreContext } from "../context/StoreContext";
+import { useAppSelector } from "../router/configureStore";
 
 const midLinks = [
   { title: "catalog", path: "/catalog" },
@@ -41,7 +41,8 @@ interface Props {
   handleChangeTheme: () => void;
 }
 export default function Header({ darkMode, handleChangeTheme }: Props) {
-  const { basket } = useStoreContext();
+  const { basket } = useAppSelector((x) => x.basket);
+  useAppSelector((x) => x.basket.basket);
   const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (

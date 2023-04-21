@@ -1,5 +1,4 @@
 import { Box, Pagination, Typography } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../router/configureStore";
 import { MetaData } from "../models/pagination";
 
 interface Props {

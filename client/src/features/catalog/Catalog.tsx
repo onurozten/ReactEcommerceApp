@@ -1,4 +1,3 @@
-import LoadingComponent from "../../app/layout/LoadingComponent";
 import ProductList from "./ProductList";
 import { useEffect } from "react";
 import {
@@ -12,7 +11,7 @@ import {
   useAppDispatch,
   useAppSelector,
 } from "../../app/router/configureStore";
-import { Box, Grid, Pagination, Paper, Typography } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import ProductSearch from "./ProductSearch";
 import RadioButtonGroup from "../../app/components/RadioButtonGroup";
 import CheckBoxButtons from "../../app/components/CheckBoxButtons";
@@ -28,7 +27,6 @@ export default function Catalog() {
   const products = useAppSelector(productSelectorts.selectAll);
   const {
     productsLoaded,
-    status,
     filtersLoaded,
     brands,
     types,
